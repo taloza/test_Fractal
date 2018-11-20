@@ -10,7 +10,7 @@ var data  = [1,8,7,9,8,6];
            
             var chart = new Highcharts.Chart({
                 chart: {
-                    renderTo:'container',
+                    renderTo:'container1',
                     type:'column'
                 },
                 credits: {},

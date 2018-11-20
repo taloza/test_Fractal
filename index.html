@@ -1,73 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tatiana Loza Test Task</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Tatiana Loza Test Task</title>
+        <link rel="stylesheet" href="style.css">
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="highcharts-border-radius.js"></script>
-    <script src="highcharts.js"></script>
-     
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="highcharts-border-radius.js"></script>
+        <script src="highcharts.js"></script>  
+    </head>
+    <body>
+        <div class="header">
+            <h1>Driver’s Details</h1>
+            <select class="select">
+                    <option value=”GR”>Unit Size, EQ/Unit</option>                
+                    <option value=”YE”>Unit Size1, EQ/Unit</option>                
+                    <option value=”BL”>Unit Size2, EQ/Unit</option>                
+            </select>
+            <div class="viewDetails">
+                <a href="#">Click the row to view details</a>                
+            </div>    
+        </div>
+        <table><tbody>
+            <tr><th>Fact</th>
+                <th>Metric</th>
+                <th>2013</th>
+                <th>2014</th>
+                <th>2015Q</th>
+                <th>2016Q</th>
+                <th>2017F</th>
+                <th>2018F</th>
+                <th>CAGR 13/15</th>
+                <th>CAGR 15/18</th>
+            </tr>        
+            <tr><td class="grayData">Unit Size</td>
+                <td>EQ/unit</td>
+                <td>103.9</td>
+                <td>53</td>
+                <td>13.170</td>
+                <td>13.170</td>
+                <td>103.9</td>
+                <td>53</td>
+                <td>13.170</td>
+                <td>13.170</td>
+            </tr>
+            <tr>
+                <td class="greenData">Unit Size - Large Packs</td>
+                <td>EQ/unit</td>
+                <td>110.3</td>
+                <td>54</td>
+                <td>12.682</td>
+                <td>12.682</td>
+                <td>103.9</td>
+                <td>53</td>
+                <td>13.170</td>
+                <td>13.170</td>
+            </tr>
+            <tr>
+                <td class="grayData">Unit Size - Medium Packs</td>
+                <td>EQ/unit</td>
+                <td>115.2</td>
+                <td>55</td>
+                <td>12.240</td>
+                <td>12.240</td>
+                <td>103.9</td>
+                <td>53</td>
+                <td>13.170</td>
+                <td>13.170</td>
+            </tr>
+            <tr class="orangeData">
+                <td>Unit Size - Small Packs</td>
+                <td>EQ/unit</td>
+                <td>121.7</td>
+                <td>56</td>
+                <td>11.176</td>
+                <td>11.176</td>
+                <td>103.9</td>
+                <td>53</td>
+                <td>13.170</td>
+                <td>13.170</td>
+            </tr>
+        </tbody></table>
+        <div class="general">
+            <div class="generalName">
+                <div class="transform">
+                    Sub-drivers Dynamic
+                </div>
+            </div>
+            <div class="containerName"> 
+                Driver <br> Contribution <br> to sales Growth
+            </div>
+            <div id="container" class="container" > 
+            </div>
+            <div class="chartsChangesName">
+                Driver&nbsp;Change (CAGR)
+            </div>            
+            <div class = "chartsChanges">               
+                <div class = "negative"> -4% </div>
+                <div class = "positive"> +11% </div>
+                <div class = "positive"> +154% </div>
+                <div class = "positive"> +5% </div>
+                <div class = "positive"> +4% </div>
+            </div>
+            <div class="change">
+                Growth <br> (CAGR)
+                <div class="changeContainer">
+                    <div class="negative">
+                       <div>13/15</div>                         
+                       <div>-4%</div>
+                    </div>
+                    <div class="positive">
+                        <div>15/18F</div>
+                        <div>+11%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="devider">
+        </div>
 
-</head>
-<body>
-    <h1>Driver’s Details</h1>
-    <table>
-        <tr><th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>        
-        <tr><td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr><td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr><td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        
-    </table>
-
-    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
-</body>
+        <div class="general">
+                <div class="generalName">
+                    <div class="transform">
+                        Sub-drivers impact
+                    </div>
+                </div>
+                <div class="containerName"> 
+                    Absolute
+                </div>
+                <div id="container1" class="container" >                     
+                    <script src="highcharts1.js"></script>
+                </div>
+                <div class="chartsChangesName">
+                    Change
+                </div>            
+                <div class = "chartsChanges">               
+                    <div class = "negative"> -4% </div>
+                    <div class = "positive"> +44% </div>
+                    <div class = "positive"> +144% </div>
+                    <div class = "positive"> +5% </div>
+                    <div class = "positive"> +4% </div>
+                </div>
+                <div class="change">
+                    Change
+                    <div class="changeContainer">
+                        <div class="negative">
+                           <div>13/15</div>                         
+                           <div>-4%</div>
+                        </div>
+                        <div class="positive">
+                            <div>15/18F</div>
+                            <div>+11%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>        
 </html>
