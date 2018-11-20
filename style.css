@@ -1,11 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 html{padding: 0; margin: 0 }
 body{margin:10px}
 * {font-family: 'Open Sans', sans-serif; }
-
-
-
+h1{font-size:18pt}
 
 .header{
   max-width:950px;
@@ -13,8 +11,6 @@ body{margin:10px}
   flex-direction:row;
   justify-content:space-between;
 }
-
-h1{font-size:18pt}
 
 select {  
   width: 170px;
@@ -95,7 +91,7 @@ tr.orangeData{
 
 .general{
   display: grid;
-  grid-template-columns: 30px 120px 600px 220px;     /* размеры столбцов сетки*/
+  grid-template-columns: 30px 120px 600px 220px;     
   grid-template-rows: 170px 40px ; 
   grid-template-areas:    "generalName  containerName     container     change "            
                           "generalName  chartsChangesName chartsChanges change " ;

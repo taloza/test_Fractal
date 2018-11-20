@@ -1,27 +1,37 @@
 document.addEventListener('DOMContentLoaded', function(){ 
 'use strict';
 var chartColumnRoundRadius = 5;
-var data  = [1,8,7,9,8,6];
-            var max   = 12;
-            var nData = [];
-            for (var i=0; i<data.length; i++){
-                nData.push(max - data[i])
-            }
-           
+var data  = [0.06, 0.07, 0.08, 0.09, 1.12, 1.25];
+            var max = 1.5;
+            var invertedData = [];   
+            
+        //calculate max
+        for (var i=0; i<data.length; i++){
+            if(data[i] > max)
+            max = data[i];          
+        }
+        max =  Math.ceil(max);  //just for chart design :)
+        
+        //generate inverted chart data
+        for (var i=0; i<data.length; i++){
+            invertedData.push(max - data[i]);               
+        }
+        
+        createChart(data, invertedData,'container');
+        createChart(data, invertedData,'container2');
+
+        function createChart(data, invertedData, containerId)
+        {
             var chart = new Highcharts.Chart({
                 chart: {
-                    renderTo:'container',
+                    renderTo:containerId,
                     type:'column'
                 },
-                credits: {},
-                exporting: {},
                 legend: {enabled:false},
                 title: {text:''},
-                tooltip: {enabled: false },
+                
                 plotOptions: {                    
-                    series: {                        
-                        stacking:'normal'
-                    }
+                    series: {stacking:'normal' }
                 },
                 xAxis: {
                     minorTickLength: 0,
@@ -33,39 +43,36 @@ var data  = [1,8,7,9,8,6];
                     '2017F',
                     '2018F'                   
                     ],
-                    title: {text:''},
-                    crosshair: true
+                    title: {text:''},                        
                 },
                 yAxis: {
                     max:max,
-                    tickInterval:max/2,
-                    allowDecimals:false
+                    tickInterval:max/2,                       
                 },
+
                 series:[{
-                    name: 'Fill Series',
-                    legendIndex:1,
+                    name: 'Fill Series',                        
                     color:'#ecf0f7',
-                    data:nData,
+                    data:invertedData,
                     borderRadiusTopLeft: chartColumnRoundRadius,
-                    borderRadiusTopRight: chartColumnRoundRadius,
-                    
+                    borderRadiusTopRight: chartColumnRoundRadius,                        
                     dataLabels: {
-                    formatter:function () { return (max - this.y) + '%'; },
-                      enabled: true,
-                      verticalAlign:'bottom'
+                        formatter:function () { return (max - (this.y)).toFixed(2)},
+                        enabled: true,
+                        verticalAlign:'bottom'
                     }
                 },{
-                    name:'Data Series',
+                    name:'Data Series',    
+                    style: {
+                            fontWeight: 'bold'
+                        },
                     LegendIndex:0,  
                     color:'#44b3c2',      
-                    data:data,
+                    data,
                     borderRadiusBottomLeft: chartColumnRoundRadius,
                     borderRadiusBottomRight: chartColumnRoundRadius
                 }]		
             });
-
-
-
-
+        }
 
 });
